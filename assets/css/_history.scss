@@ -1,0 +1,208 @@
+.history {
+    background-color: #131419;
+    position: relative;
+    top: 80px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 55px 60px;
+    overflow: auto;
+    display: none;
+    .history__title {
+        font-size: 26px;
+        font-weight: 500;
+        color: #fff;
+    }
+    .histoy__box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 30px;
+        padding-top: 35px;
+        .history__item {
+            position: relative;
+            max-width: 1220px;
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            .hidden_title{
+                display: flex;
+                gap: 50px;
+                font-size: 14px;
+                color: #5f5f6e;
+                margin-bottom: 20px;
+                position: absolute;
+                top: -35px;
+                display: none;
+            }
+            .item__title {
+                position: absolute;
+                top: -30px;
+                color: #5f5f6e;
+                font-size: 14px;
+                font-weight: 500;
+            }
+            .item__title1 {
+                left: 0px;
+            }
+            .item_img {
+                width: 24px;
+                cursor: pointer;
+            }
+            .history__item-left {
+                border-radius: 15px 0 0 15px;
+                padding: 0 20px;
+                height: 60px;
+                padding-right: 40px;
+                width: 100%;
+                display: flex;
+                background: #1c1c24;
+                justify-content: space-between;
+                .network_icon {
+                    width: 40px;
+                    height: 40px;
+                }
+                .item__flex {
+                    display: flex;
+                    width: 150px;
+                    align-items: center;
+                    gap: 10px;
+                    color: #fff;
+                    font-weight: 500;
+                    font-size: 16px;
+                }
+            }
+            .history__item-right {
+                width: 100%;
+                border-radius: 0 15px 15px 0;
+                padding: 0 20px;
+                padding-left: 40px;
+                height: 60px;
+                background: #1c1c24;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .history__progress {
+                    display: flex;
+                    flex-direction: column;
+                    width: 60%;
+                    gap: 5px;
+                    .progress__top {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        color: #fff;
+                    }
+                    .progress__bottom {
+                        display: flex;
+                        color: #fff;
+                        height: 6px;
+                        background: #2d2d3a;
+                        border-radius: 5px;
+                        span {
+                            background: #4447e2;
+                            border-radius: 5px;
+                            height: 100%;
+                        }
+                    }
+                }
+                .coin_item {
+                    font-weight: 500;
+                    font-size: 16px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .history__showmore{
+        width: fit-content;
+        margin: auto;
+        margin-top: 20px;
+        border: 2px solid #2D2D3A;
+        border-radius: 15px;
+        padding: 15px 20px;
+        color: #2D2D3A;
+        font-weight: 500;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s;
+        user-select: none;
+        &:hover{
+            color: #4447E2;
+            border: 2px solid #4447E2;
+            transition: all 0.3s;
+        }
+        &:active{
+            transition: all 0.2s;
+            transform: scale(0.95);
+        }
+    }
+}
+.history.active {
+    display: flex;
+}
+@media (max-width: 992px) {
+    .history {
+        .histoy__box {
+            gap: 10px;
+            .history__item {
+                flex-wrap: wrap;
+                .item__title{
+                    display: none;
+                }
+                .hidden_title{
+                    display: flex;
+                }
+                .history__item-left {
+                    border-radius: 15px 15px 0 0;
+                    padding-right: 0px;
+                    padding: 0 20px;
+                    height: 50px;
+                    justify-content: space-between;
+                    width: 100%;
+                }
+                
+                .history__item-right {
+                    height: 50px;
+                    justify-content: space-between;
+                    border-radius: 0 0 15px 15px;
+                    padding-left: 0px;
+                    padding: 0 20px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 767px) {
+    .history {
+        padding: 55px 30px;
+    }
+}
+@media (max-width: 500px) {
+    .history {
+        height: calc(100vh - 110px);
+        padding: 55px 16px 100px !important;
+        top: 50px;
+        .histoy__box {
+            .history__item {
+                .hidden_title{
+                    display: flex;
+                    gap: 20px;
+                    font-size: 12px;
+                }
+                .item__title{
+                    font-size: 12px;
+                }
+                .item__flex{
+                    width: fit-content !important;
+                    font-size: 12px !important;
+                }
+                .network_icon {
+                    width: 30px !important;
+                }
+            }
+        }
+    }
+}

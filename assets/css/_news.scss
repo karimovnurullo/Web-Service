@@ -1,0 +1,358 @@
+.news {
+  background-color: #131419;
+  position: relative;
+  top: 80px;
+  left: 0;
+  padding: 55px 60px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  display: none;
+
+  .tasklist__title {
+    font-size: 26px;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .news__banner {
+    width: 100%;
+    height: 360px;
+    background: #1c1c24;
+    border-radius: 15px;
+    margin-top: 30px;
+    padding: 20px;
+    display: flex;
+    overflow: hidden;
+    border: 1px solid #1c1c24;
+
+    .news__banner__left {
+      width: 50%;
+      max-width: 700px;
+      max-height: 320px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+    }
+
+    .news__banner__right {
+      width: 50%;
+      padding: 30px 30px;
+
+      h2 {
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 40px;
+        color: #fff;
+      }
+
+      p {
+        color: #fff;
+        margin-top: 20px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        padding-top: 10px;
+      }
+
+      .data {
+        font-size: 14px;
+        font-weight: 400;
+        color: #a6adb1;
+        padding-top: 20px;
+      }
+    }
+
+    transition: all 0.5s;
+
+    &:hover {
+      transform: scale(1.02);
+      transition: all 0.2s;
+      border: 1px solid rgb(68, 71, 226);
+    }
+  }
+
+  .two__title {
+    margin-top: 70px;
+  }
+
+  .news__box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
+    margin-top: 35px;
+    gap: 20px;
+
+    .news__card {
+      width: 390px;
+      height: fit-content;
+      padding: 20px;
+      background: #1c1c24;
+      border-radius: 15px;
+      margin: auto;
+      border: 1px solid #1c1c24;
+
+      img {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+        border-radius: 15px;
+      }
+
+      h3 {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: #fff;
+        margin-top: 10px;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        color: #a6adb1;
+        margin-top: 10px;
+      }
+
+      transition: all 0.5s;
+
+      &:hover {
+        transform: scale(1.02);
+        transition: all 0.2s;
+        border: 1px solid rgb(68, 71, 226);
+      }
+    }
+  }
+
+  .news__control__panel {
+    width: 200px;
+    height: fit-content;
+    background: #1c1c24;
+    border: 2px solid #262631;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+
+    .news__password {
+      width: 100%;
+      height: 30px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      padding: 2px 5px;
+      font-size: 15px;
+    }
+
+    .hidden__inputs {
+      display: none;
+      width: 100%;
+      height: 30px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      padding: 2px 5px;
+      font-size: 15px;
+      margin-top: 20px;
+    }
+
+    .news__password__enter {
+      width: 80%;
+      margin-left: 10%;
+      height: 30px;
+      border-radius: 10px;
+      border: 0;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 20px;
+      transition: all 0.1s;
+      background-color: rgb(68, 71, 226);
+      color: #fff;
+
+      &:active {
+        transition: all 0.1s;
+      }
+    }
+
+    .news__add__content {
+      width: 80%;
+      margin-left: 10%;
+      height: 30px;
+      border-radius: 10px;
+      border: 0;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 20px;
+      transition: all 0.1s;
+      background-color: rgb(68, 71, 226);
+      color: #fff;
+      display: none;
+
+      &:active {
+        transition: all 0.1s;
+      }
+    }
+  }
+
+  .news__control__panel.active {
+    display: flex;
+
+    .news__password.wrong {
+      background-color: #fff;
+      animation: wrong 1.5s alternate-reverse;
+      transition: none;
+    }
+
+    @keyframes wrong {
+      100% {
+        background-color: red;
+      }
+    }
+  }
+
+  .news__control__panel.open {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999999;
+    border-radius: 0;
+    transition: all 0.3s;
+
+    .hidden__inputs {
+      display: flex;
+    }
+
+    .news__password {
+      display: none;
+    }
+
+    .news__add__content {
+      display: block;
+    }
+
+    .news__password__enter {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .news {
+    padding: 55px 24px;
+
+    .news__banner {
+      .news__banner__right {
+        padding: 20px;
+
+        h2 {
+          font-size: 28px;
+          line-height: 38px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .news {
+    .news__banner {
+      flex-direction: column;
+      width: 100%;
+      height: fit-content;
+
+      .news__banner__left {
+        width: 100%;
+      }
+
+      .news__banner__right {
+        width: 100%;
+        padding: 20px 0 0;
+      }
+    }
+
+    .news__box {
+      .news__card {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .news {
+    padding: 55px 16px 100px;
+    height: calc(100vh - 110px);
+    top: 50px;
+
+    .tasklist__title {
+      font-size: 22px;
+    }
+
+    .news__banner {
+      padding: 20px;
+      height: fit-content;
+      overflow: visible;
+
+      .news__banner__left {
+        width: 100%;
+
+        img {
+          height: 170px;
+        }
+      }
+
+      .news__banner__right {
+        height: fit-content;
+        width: 100%;
+
+        h2 {
+          font-size: 20px;
+          line-height: 30px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+
+        .data {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .news__box {
+      grid-template-columns: 1fr;
+
+      .news__card {
+        width: 100%;
+
+        h3 {
+          font-size: 18px;
+          line-height: 24px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.news__control__panel__form {
+  max-width: 500px;
+}
+
+/* @compress-my-css */
